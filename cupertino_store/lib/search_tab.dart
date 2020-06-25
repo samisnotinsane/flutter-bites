@@ -76,13 +76,5 @@ class _SearchTabState extends State<SearchTab> {
         ),
       ),
     );
-
-    return CustomScrollView(
-      slivers: <Widget>[
-        CupertinoSliverNavigationBar(
-          largeTitle: Text('Search'),
-        )
-      ],
-    );
   }
 }
