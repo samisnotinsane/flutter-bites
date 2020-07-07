@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/where_to_sheet.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,7 +16,23 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-        body: Placeholder(),
+        body: Stack(
+          children: <Widget>[
+            Placeholder(),
+            DraggableScrollableSheet(
+              initialChildSize: 0.3,
+              minChildSize: 0.1,
+              maxChildSize: 0.3,
+              builder: (context, scrollController) {
+                return Container(
+                  padding: EdgeInsets.all(8.0),
+                  color: Colors.amberAccent,
+                  child: WhereToSheet(),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
