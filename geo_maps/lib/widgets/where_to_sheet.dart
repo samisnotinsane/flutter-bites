@@ -1,8 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:geo_maps/model/destination.dart';
 
+import '../mock/mock_data.dart';
 import 'where_to_button.dart';
 
-class WhereToSheet extends StatelessWidget {
+class WhereToSheet extends StatefulWidget {
+  @override
+  _WhereToSheetState createState() => _WhereToSheetState();
+}
+
+class _WhereToSheetState extends State<WhereToSheet> {
+  final MockData _mockData = MockData();
+  List<Destination> _destinations;
+
+  @override
+  void initState() {
+    super.initState();
+    addDummyDestinations();
+    _destinations = _mockData.destinations;
+  }
+
+  void addDummyDestinations() {
+    _mockData.addDestination = Destination(
+      title: 'Home',
+      address: 'Knightsbridge, London',
+    );
+    _mockData.addDestination = Destination(
+      title: 'Work',
+      address: 'Piccadilly, London',
+    );
+    _mockData.addDestination = Destination(
+      title: 'Black Sheep Coffee',
+      address: 'Leadenhall St, London',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
