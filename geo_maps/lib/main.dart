@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               builder: (context, scrollController) {
                 return Container(
                   padding: EdgeInsets.all(8.0),
-                  color: Colors.amberAccent,
+                  color: Theme.of(context).cardColor,
                   child: WhereToSheet(),
                 );
               },
