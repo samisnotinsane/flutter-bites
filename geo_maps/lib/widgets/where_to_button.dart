@@ -12,7 +12,7 @@ class WhereToButton extends StatelessWidget {
       child: FlatButton(
         padding: EdgeInsets.symmetric(
           horizontal: 8.0,
-          vertical: 14.0,
+          vertical: 18.0,
         ),
         child: Align(
           alignment: Alignment.centerLeft,
