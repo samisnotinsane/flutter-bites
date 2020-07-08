@@ -3,6 +3,7 @@ import 'package:geo_maps/model/destination.dart';
 
 import '../mock/mock_data.dart';
 import 'where_to_button.dart';
+import 'where_to_recent_dest_list.dart';
 
 class WhereToSheet extends StatefulWidget {
   @override
@@ -63,6 +64,7 @@ class _WhereToSheetState extends State<WhereToSheet> {
         WhereToButton(
           onPressedHandler: () {},
         ),
+        WhereToRecentDestList(destinations: _destinations),
       ],
     );
   }
