@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
           children: <Widget>[
             Placeholder(),
             DraggableScrollableSheet(
-              initialChildSize: 0.3,
+              initialChildSize: 0.35,
               minChildSize: 0.1,
-              maxChildSize: 0.3,
+              maxChildSize: 0.4,
               builder: (context, scrollController) {
                 return Container(
                   padding: EdgeInsets.all(8.0),

@@ -50,6 +50,9 @@ class _WhereToSheetState extends State<WhereToSheet> {
             borderRadius: BorderRadius.circular(5.0),
           ),
         ),
+        SizedBox(
+          height: 6.0,
+        ),
         Text(
           // Greeting
           'Good morning, Sameen',
@@ -58,11 +61,20 @@ class _WhereToSheetState extends State<WhereToSheet> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        SizedBox(
+          height: 6.0,
+        ),
         Divider(
           color: Theme.of(context).dividerColor,
         ),
+        SizedBox(
+          height: 6.0,
+        ),
         WhereToButton(
           onPressedHandler: () {},
+        ),
+        SizedBox(
+          height: 6.0,
         ),
         WhereToRecentDestList(
           destinations: _destinations,

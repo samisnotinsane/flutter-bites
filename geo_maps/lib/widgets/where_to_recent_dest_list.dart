@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../model/destination.dart';
+import 'where_to_recent_dest_tile.dart';
 
 class WhereToRecentDestList extends StatelessWidget {
   const WhereToRecentDestList({
-    Key key,
-    @required List<Destination> destinations,
-  })  : _destinations = destinations,
-        super(key: key);
+    @required this.destinations,
+  });
 
-  final List<Destination> _destinations;
+  final List<Destination> destinations;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +21,9 @@ class WhereToRecentDestList extends StatelessWidget {
           // 16% of screen width
           indent: MediaQuery.of(context).size.width * 0.16,
         ),
-        itemBuilder: (context, index) => ListTile(
-          leading: RawMaterialButton(
-            onPressed: null,
-            shape: CircleBorder(),
-            fillColor: Theme.of(context).accentColor,
-            elevation: 0.2,
-            child: Icon(Icons.history, color: Theme.of(context).canvasColor),
-          ),
-          title: Text(_destinations[index].title),
-          subtitle: Text(_destinations[index].address),
-        ),
-        itemCount: _destinations.length,
+        itemBuilder: (context, index) =>
+            WhereToRecentDestTile(destination: destinations[index]),
+        itemCount: destinations.length,
       ),
     );
   }
