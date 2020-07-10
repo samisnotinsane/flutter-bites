@@ -23,7 +23,13 @@ class WhereToRecentDestList extends StatelessWidget {
           indent: MediaQuery.of(context).size.width * 0.16,
         ),
         itemBuilder: (context, index) => ListTile(
-          leading: Icon(Icons.history),
+          leading: RawMaterialButton(
+            onPressed: null,
+            shape: CircleBorder(),
+            fillColor: Theme.of(context).accentColor,
+            elevation: 0.2,
+            child: Icon(Icons.history, color: Theme.of(context).canvasColor),
+          ),
           title: Text(_destinations[index].title),
           subtitle: Text(_destinations[index].address),
         ),

@@ -64,7 +64,9 @@ class _WhereToSheetState extends State<WhereToSheet> {
         WhereToButton(
           onPressedHandler: () {},
         ),
-        WhereToRecentDestList(destinations: _destinations),
+        WhereToRecentDestList(
+          destinations: _destinations,
+        ),
       ],
     );
   }
