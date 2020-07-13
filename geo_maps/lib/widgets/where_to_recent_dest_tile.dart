@@ -19,14 +19,14 @@ class WhereToRecentDestTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           RawMaterialButton(
-            onPressed: null,
+            onPressed: null, // disables inkwell effect
             shape: CircleBorder(),
-            fillColor: Theme.of(context).accentColor,
+            fillColor: Theme.of(context).accentColor, // orange
             elevation: 0.2,
             child: destination.title.toUpperCase() == 'HOME'
                 ? Icon(
                     Icons.home,
-                    color: Theme.of(context).canvasColor,
+                    color: Theme.of(context).canvasColor, // white
                   )
                 : destination.title.toUpperCase() == 'WORK'
                     ? Icon(
@@ -49,7 +49,7 @@ class WhereToRecentDestTile extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 6.0,
+                height: 6.0, // create space between title and address
               ),
               Text(
                 destination.address,

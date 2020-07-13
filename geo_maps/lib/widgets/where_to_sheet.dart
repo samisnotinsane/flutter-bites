@@ -62,7 +62,7 @@ class _WhereToSheetState extends State<WhereToSheet> {
           ),
         ),
         SizedBox(
-          height: 6.0,
+          height: 6.0, // spacing
         ),
         Divider(
           color: Theme.of(context).dividerColor,

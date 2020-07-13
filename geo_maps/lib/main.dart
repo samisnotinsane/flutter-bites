@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/map_view.dart';
 import 'widgets/where_to_sheet.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: <Widget>[
-            Placeholder(),
+            GoogleMapView(),
             DraggableScrollableSheet(
               initialChildSize: 0.35,
               minChildSize: 0.1,
