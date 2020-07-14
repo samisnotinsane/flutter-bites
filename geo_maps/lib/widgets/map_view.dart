@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'loading_blip.dart';
 
@@ -36,12 +36,28 @@ class _GoogleMapViewState extends State<GoogleMapView> {
         .catchError((e) => print(e));
   }
 
+  // Centres map on device location coordinates.
+  _buildCameraPosition() => CameraPosition(
+      target: LatLng(_currentPosition.latitude, _currentPosition.longitude),
+      zoom: 16);
+
+// Applies theme to map once it has loaded.
+  _buildMap(GoogleMapController mapController) =>
+      mapController.setMapStyle(_mapStyle);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height *
           0.65, // height (65%) = screen height (100%) - height of bottom card (35%)
-      child: _currentPosition == null ? LoadingBlip() : Placeholder(),
+      child: _currentPosition == null
+          ? LoadingBlip()
+          : GoogleMap(
+              myLocationButtonEnabled: false,
+              myLocationEnabled: true,
+              initialCameraPosition: _buildCameraPosition(),
+              onMapCreated: _buildMap,
+            ),
     );
   }
 }
